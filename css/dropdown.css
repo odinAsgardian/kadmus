@@ -1,0 +1,93 @@
+/* Documento css */
+body{
+    background-color: #DCDCDC;
+
+}
+*{
+	margin: 0px;
+	padding:0px;
+}
+.menu ul {
+	width: 100%;
+}
+.menu {
+	list-style-type: none;
+	float:left;
+	width: 100%;
+	display: block;
+	background-color: #5e5f75;
+}
+.menu li:last-child{
+	border-bottom-right-radius: 20px;
+	border-right-color: #000000;
+}
+.menu li:first-child{
+	border-bottom-left-radius: 20px;
+}
+.menu li { 
+	position: relative;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color:#5e5f75;
+	height: 0px 20px 0px;
+	line-height: 28px;
+}
+.menu li a {
+	display:inline;	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color:#FFFFFF;
+	cursor:pointer;
+	text-decoration: none;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 100px;
+}
+.menu li ul {
+	list-style-type: none;
+	position:absolute;		
+	top: 30px;
+	display: none;
+	margin-left: -15.5px;
+
+}
+.menu li:hover ul, .menu li ul li:hover ul, .menu li .over ul, .menu li ul li .over ul{
+	display: block;
+
+}
+.menu li ul li { 
+	border: 1px solid #000000;
+	color: white;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 20px; 
+	display:inline;
+	width: 78%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.menu li ul li a {
+	text-align: center;
+	margin-left: 15px;
+}
+.menu li ul li:first-child {
+	border-bottom-right-radius:0px;
+	border-bottom-left-radius:0px;
+}
+.menu li ul li:last-child {
+	border-bottom-left-radius: 10px;
+}
+ul, li {
+	display: inline;
+	height: 100%;
+	text-align: center;
+	border-right-color: #030789;
+}
+body{
+	width: 100%;
+}
+ul li:hover{
+	background-color: #403e3e;
+
+}
