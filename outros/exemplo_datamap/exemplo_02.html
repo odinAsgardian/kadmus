@@ -1,0 +1,119 @@
+<script src="d3.min.js"></script>
+<script src="topojson.min.js"></script>
+<script src="datamaps.world.min.js"></script>
+<div id="container" style="position: relative; width: 900px; height: 450px;"></div>
+  
+<svg xmlns="/web/20150321210727/http://www.w3.org/2000/svg" version="1.1"
+     xmlns:xlink="/web/20150321210727/http://www.w3.org/1999/xlink">
+    <!-- Definindo uma textura com linhas horizontais --> 
+    <defs>
+        <pattern id="horizontal-stripe"
+                 width="4" height="4"
+                 patternUnits="userSpaceOnUse">
+             <line x1="0" y1="2" x2="4" y2="2" stroke="blue" />
+        </pattern>
+    </defs>
+</svg>
+<script>
+    
+	
+	var map = new Datamap({
+        element: document.getElementById('container'),
+		//definindo as cores padrões
+        fills: {            
+            NIVEL1: 'yellow',
+            NIVEL2: 'blue',
+			horizontalStripe: 'url(#horizontal-stripe)', // incluindo uma textura
+            NIVEL3: 'orange',
+			NIVEL4: 'green',
+            defaultFill: 'gray'
+        },
+        data: {
+            IRL: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Alexandre' 
+            },
+            USA: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Odin'
+            },
+            BRA: {
+                fillKey: 'NIVEL3',
+                level: 3,
+				best: 'Marcela'
+            },
+            ARG: {
+                fillKey: 'NIVEL1',
+                level: 1,
+				best: 'Poliana'
+            },
+            FRA: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Ranieri'
+            },
+            ITA: {
+                fillKey: 'NIVEL3',
+                level: 3,
+				best: 'Allan'
+            },
+            RUS: {
+                fillKey: 'NIVEL1',
+                level: 1,
+				best: 'Milton'
+            },
+            AUS: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Hugo'
+            },
+            CHN: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Ivo'
+            },
+            ESP: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Ramon'
+            },
+			 CAN: {
+                fillKey: 'horizontalStripe',
+                level: 4,
+				best: 'Neo'
+            }
+			
+        },
+		// informações exibidas ao colocar o mouse sobre o país
+        geographyConfig: {
+            popupTemplate: function(geo, data) {
+                return ['<div class="hoverinfo"><strong>',
+                        'Best player in ' + geo.properties.name,
+                        ': </strong> ' + data.best,
+						'<br><strong> My Level : </strong>'+ data.level,
+						'</div>'].join('');
+            }
+        }
+    });
+	
+	// desenhando as linhas em formato de arco entre os países
+	map.arc([
+	  {
+		origin: 'BRA',
+		destination: 'AUS'
+	  },
+	  {
+		origin: 'AUS',
+		destination: 'CHN'
+	  },
+	  {
+		origin: 'CHN',
+		destination: 'RUS'
+	  }
+
+	],  {strokeWidth: 1, arcSharpness: 1.4});
+	
+	
+</script>

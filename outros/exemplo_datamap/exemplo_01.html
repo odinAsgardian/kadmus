@@ -1,0 +1,63 @@
+<script src="d3.min.js"></script>
+<script src="topojson.min.js"></script>
+<script src="datamaps.world.min.js"></script>
+<div id="container" style="position: relative; width: 900px; height: 450px;"></div>
+<script>
+    
+	
+	var map = new Datamap({
+        element: document.getElementById('container'),
+		//definindo as cores padrões
+        fills: {            
+            NIVEL1: 'yellow',
+            NIVEL2: 'blue',
+            NIVEL3: 'orange',
+			NIVEL4: 'green',
+            defaultFill: 'gray'
+        },
+        data: {
+            IRL: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Alexandre' 
+            },
+            USA: {
+                fillKey: 'NIVEL2',
+                level: 2,
+				best: 'Odin'
+            },
+            BRA: {
+                fillKey: 'NIVEL3',
+                level: 3,
+				best: 'Marcela'
+            },
+            ARG: {
+                fillKey: 'NIVEL1',
+                level: 1,
+				best: 'Poliana'
+            },
+            FRA: {
+                fillKey: 'NIVEL4',
+                level: 4,
+				best: 'Ranieri'
+            }
+			
+        },
+		// informações exibidas ao colocar o mouse sobre o país
+        geographyConfig: {
+            popupTemplate: function(geo, data) {
+                return ['<div class="hoverinfo"><strong>',
+                        'Best player in ' + geo.properties.name,
+                        ': </strong> ' + data.best,
+						'<br><strong> My Level : </strong>'+ data.level,
+						'</div>'].join('');
+            }
+        }
+    });
+	
+	
+	
+	
+	
+	
+</script>
