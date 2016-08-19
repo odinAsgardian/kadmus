@@ -1,6 +1,3 @@
-<?php 
-include_once 'teste.php';
-?>
 <title>Cadastro</title>
 <form action="Formulario.php" method="post">
 <!-- DADOS DO PLAYER -->
@@ -46,7 +43,3 @@ include_once 'teste.php';
 <input type="submit" value="Send">
 <input type="reset" value="Clear">
 </form>
-
-<?php 
-include_once 'teste.php';
-?>
