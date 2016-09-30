@@ -34,7 +34,7 @@
        <label for="passw">Password: </label>
      </td>
      <td>
-       <input type="text" name="passw" placeholder="**********">
+       <input type="password" name="passw" placeholder="**********">
      </td>
      </tr>    
  </table>
