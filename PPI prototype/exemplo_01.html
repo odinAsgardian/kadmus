@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			#container {
+				position: absolute;
+				z-index: 1000;
+			}
+			#game {
+				position: fixed;
+				top: 0;
+				border: outset black 3px;
+				border-radius: 5px;
+				z-index: 1100
+			}
+		</style>
+	</head>	
+	<body>
+		<script src="d3.js"></script>
+		<script src="js/sprite.js"></script>
+		<script src="js/script.js"></script>
+		<script src="topojson.min.js"></script>
+		<script src="datamaps.world.js"></script>
+		<script src="jquery-3.1.1.js"></script>
+		
+		<div id="container" style="position: relative;
+		width: 900px; height: 450px;"></div>
+		<canvas width="900" height="450" id="game"></canvas>
+		<script>
+		    
+			
+			var map = new Datamap({
+		        element: document.getElementById('container'),
+				//definindo as cores padrões
+		        fills: {            
+		            NIVEL1: 'yellow',
+		            NIVEL2: 'blue',
+		            NIVEL3: 'orange',
+					NIVEL4: 'green',
+		            defaultFill: 'gray'
+		        },
+		        data: {
+		            IRL: {
+		                fillKey: 'NIVEL2',
+		                level: 2,
+						best: 'Alexandre' 
+		            },
+		            USA: {
+		                fillKey: 'NIVEL2',
+		                level: 2,
+						best: 'Odin'
+		            },
+		            BRA: {
+		                fillKey: 'NIVEL3',
+		                level: 3,
+						best: 'Marcela'
+		            },
+		            ARG: {
+		                fillKey: 'NIVEL1',
+		                level: 1,
+						best: 'Poliana'
+		            },
+		            FRA: {
+		                fillKey: 'NIVEL4',
+		                level: 4,
+						best: 'Ranieri'
+		            }
+					
+		        },
+				// informações exibidas ao colocar o mouse sobre o país
+		        geographyConfig: {
+		          popupTemplate: function(geo, data) {
+		                return ['<div class="hoverinfo"><strong>',
+		                        'Best player in ' + geo.properties.name,
+		                        ': </strong> ' + data.best,
+								'<br><strong> My Level : </strong>'+ data.level,
+								'</div>'].join('');
+		            }
+
+
+
+
+		        }
+		    });
+			
+		</script>
+		<script>
+			// var canvas = document.getElementById('game');
+			// canvas.onmousemove = function(orig_evt) {
+			// 	// console.log(evt.x, evt.y);
+			// 	var container = document.getElementById('container');
+			// 	var evt = document.createEvent('MouseEvents')
+			// 	evt.initMouseEvent("mouseover", true, true, window, 0, orig_evt.screenX, orig_evt.screenY, orig_evt.x, orig_evt.y, false, false, false, false, 0, container);
+			// 	console.log( orig_evt.screenX, orig_evt.screenY, orig_evt.x, orig_evt.y);
+			// 	var dispatched = document.body.dispatchEvent(evt);
+			// 	console.log(dispatched);
+			// }
+
+			var container = document.getElementById('container');
+			var evt = document.createEvent('MouseEvents');
+			evt.initMouseEvent("mouseover", true, true, window, 0, 300, 341, 200, 167, false, false, false, false, 0, container)
+			var dispatched = document.body.dispatchEvent(evt);
+			console.trace();
+
+		</script>
+		
+	</body>
+</html>
