@@ -1,3 +1,6 @@
+<?php
+	require_once 'Conexao.php'
+	?>
 <!DOCTYPE html> 
 <html>
 	<head>
@@ -7,7 +10,7 @@
 	</head>
 	<body>
 		<form id="kadmus" action="cadastrar.php" method="POST">
-			<label for="USR_NICKNAME">Nicname:</label>
+			<label for="USR_NICKNAME">Nickname:</label>
 				<input type="text" name="USR_NICKNAME" id="USR_NICKNAME" required/> 
 			<label for="USR_NAME">Name:</label>
 				<input type="text" name="USR_NAME"/> 
@@ -26,22 +29,32 @@
 				</tr>
 			</thead>
 			<tbody id="corpo">
-				<?php
-					require_once 'conexao.php';
-
-					$conexao = new Conexao(DB_SERVER, DB_NAME, DB_USERNAME, DB_PASSWORD);
-
-					$select = $conexao->select('jgo_user');
-					if($select){
-						foreach ($select as $pessoa) {						
-							echo "<tr><td>".$pessoa['USR_NICKNAME']."</td>";
-							echo "<td>".$pessoa['USR_NAME']."</td>";
-							echo "<td>".$pessoa['USR_PASSWORD']."</td>";
-							echo "<td>".$pessoa['USR_FOTO']."</td>";
-							echo "<td><a href='deletar.php?USR_NICKNAME=".$pessoa['USR_NICKNAME']."' ><img src='deletar.gif'></a></td></tr>";
-						}
-					}
-				?>		
+				 <?php
+				 		connect();
+				 		$sql = "SELECT * FROM jgo_user";
+				 		$result = mysqli_query($connection, $sql);
+				 		while($array = mysqli_fetch_array($result)){
+				 			echo "<tr><td>".$array['USR_NICKNAME']."</td>";
+							echo "<td>".$array['USR_NAME']."</td>";
+							echo "<td>".$array['USR_PASSWORD']."</td>";
+							echo "<td>".$array['USR_FOTO']."</td>";
+							echo "<td><a href='deletar.php?USR_NICKNAME=".$array['USR_NICKNAME']."' ><img src='deletar.gif'></a></td></tr>";
+				 		}
+						/*require_once 'Conexao.php';
+					
+						$conexao = new Conexao(DB_SERVER, DB_NAME, DB_USERNAME, DB_PASSWORD);
+					
+						$select = $conexao->select('jgo_user');
+						if($select){
+							foreach ($select as $pessoa) {						
+								echo "<tr><td>".$pessoa['USR_NICKNAME']."</td>";
+								echo "<td>".$pessoa['USR_NAME']."</td>";
+								echo "<td>".$pessoa['USR_PASSWORD']."</td>";
+								echo "<td>".$pessoa['USR_FOTO']."</td>";
+								echo "<td><a href='deletar.php?USR_NICKNAME=".$pessoa['USR_NICKNAME']."' ><img src='deletar.gif'></a></td></tr>";
+							}
+						}*/
+					?>	 	
 				
 				
 			</tbody>

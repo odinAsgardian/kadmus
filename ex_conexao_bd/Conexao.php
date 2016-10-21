@@ -1,19 +1,19 @@
-<?php
+ <?php
 
-define('DB_SERVER', 'localhost');
+/*define('DB_SERVER', 'localhost');
 define('DB_NAME', 'kadmus');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '');*/
 
 
-class Conexao {
+/*class Conexao {
 
     var $db, $conn;
 
-    public function __construct($server, $database, $username, $password) {
+    public function __construct($server, $username, $password, $database) {
 		$this->conn = mysqli_connect($server, $username, $password, $database);
-        $this->db = mysqli_select_db($this->conn,$database);
-    }
+        // $this->db = mysqli_select_db($this->conn,$database);
+    }*/
 
     /**
      * Função para inserir dados na tabela
@@ -21,7 +21,7 @@ class Conexao {
      * @param string $tabela tabela que será inserido os dados
      * @return boolean verdadeiro ou falso
      */
-    public function insert($tabela, $dados) {
+  /*  public function insert($tabela, $dados) {
 
         foreach ($dados as $key => $value) {
             $keys[] = $key;
@@ -33,7 +33,7 @@ class Conexao {
         $sql = "INSERT INTO $tabela ($keys) VALUES ($insertvalues)";
 
         return $this->executar($sql);
-    }
+    }*/
     
     /**
      * Função para alterar os dados da tabela
@@ -43,7 +43,7 @@ class Conexao {
      * @param array $dados dados que serão inserido
      * @return boolean verdadeiro ou falso
      */
-    public function update($tabela, $colunaPrimay, $id, $dados) {
+   /* public function update($tabela, $colunaPrimay, $id, $dados) {
 
 
         foreach ($dados as $key => $value) {
@@ -60,14 +60,14 @@ class Conexao {
 	public function delete($tabela, $colunaPrimay, $id) {
         $sql = "DELETE FROM $tabela WHERE $colunaPrimay= '$id'";
         return $this->executar($sql);
-    }
+    }*/
 
     /**
      * Função de seleção dos registros da tabela
      * @param string $tabela Description
      * @param string $colunas string contendo as colunas separadas por virgula para seleção, se null busca por todas *
      */
-    public function select($tabela, $colunas = "*") {
+    /*public function select($tabela, $colunas = "*") {
 
         $sql = "SELECT $colunas FROM $tabela";
 
@@ -95,6 +95,20 @@ class Conexao {
         die('error: ' . $sql);
     }
 
+}*/
+$connection = null;
+
+function connect() {
+	global $connection;
+	$servername = 'localhost';
+	$username = 'root';
+	$password = '';
+	$database = 'kadmus';
+
+	$connection = mysqli_connect($servername, $username, $password, $database);
+	if (!$connection){
+		die("Connection Failed: ".mysqli_connect_error());
+	}
 }
 
-?>
+?> 
