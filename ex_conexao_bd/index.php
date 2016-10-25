@@ -25,7 +25,7 @@
 			<caption>Usuários</caption>
 			<thead>
 				<tr> 
-					<th>Nickname</th> <th>Name</th> <th>Password</th> <th>Foto</th> <th> Deletar </th>
+					<th> Nickname </th> <th> Name </th> <th> Password </th> <th> Foto </th> <th> Deletar </th>
 				</tr>
 			</thead>
 			<tbody id="corpo">

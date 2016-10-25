@@ -19,5 +19,8 @@
 	$insert = $conexao->insert('jgo_user', $dados);  */
 	
 	//header("Location: {$_SERVER['HTTP_REFERER']}");
+	header("location: ../jogo_do_celle.html");
 	exit;
+
+
 ?>
