@@ -7,15 +7,17 @@ var hiScore = 0 ;
             circle.innerHTML = contador ;
             setTimeout('start();', 1000);
          
-        }
+        }  
+
         function chamadaHiScore(){
         	if (matches >= 0 ) {
         		hiscore = hiscore + matches ;
         		document.getElementsById("")
         		setTimeout('chamadaHiScore();',1000)
         	}
+        }     
 
-        }
+        
     }(function(){
 	//array que armazenará os objetos com src e id de 1 a 8
 	var images = [];
@@ -133,6 +135,7 @@ var hiScore = 0 ;
 					if(matches >= 8){
 						//caso haja 8 acertos, chama a função que finaliza o jogo
 						gameOver();
+									
 					}
 				} 
 			} 
