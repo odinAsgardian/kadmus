@@ -80,6 +80,7 @@ body{
 }
 
 #hiscore{
+	background-color: blue;
 	font: bold 90px arial;
 	width: 200px;
 	height: 200px;
