@@ -1,21 +1,18 @@
 var contador = 60; 
-var hiScore = 0 ;  
+  
 
    function start() {
         if ((contador - 1)>= 0) {
             contador = contador - 1;
+
             circle.innerHTML = contador ;
-            setTimeout('start();', 1000);
-         
+            var tempo =setTimeout('start();', 1000);
+         if (contador == 0) {
+            	gameOver();
+            }
         }  
 
-        function chamadaHiScore(){
-        	if (matches >= 0 ) {
-        		hiscore = hiscore + matches ;
-        		document.getElementsById("")
-        		setTimeout('chamadaHiScore();',1000)
-        	}
-        }     
+          
 
         
     }(function(){
@@ -201,6 +198,8 @@ var hiScore = 0 ;
 	//função de fim do jogo
 	function gameOver(){
 		//joga a mensagem de fim do jogo para o plano da frente
+		hiscore.innerText=contador+matches*2;
+	
 		modal.style.zIndex = "99";
 		
 		//adiciona o evento click à imagem de game over
