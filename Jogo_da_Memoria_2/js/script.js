@@ -1,21 +1,30 @@
 var contador = 60; 
-  
+var hiScore = 0 ;  
+
+
 
    function start() {
         if ((contador - 1)>= 0) {
             contador = contador - 1;
-
             circle.innerHTML = contador ;
-            var tempo =setTimeout('start();', 1000);
-         if (contador == 0) {
-            	gameOver();
-            }
-        }  
+        }  else {
 
-          
+        }
+
+        function chamadaHiScore(){
+        	if (matches >= 0 ) {
+        		hiscore = hiscore + matches ;
+        		document.getElementsById("")
+        		setTimeout('chamadaHiScore();',1000)
+        	}
+        }     
 
         
-    }(function(){
+    }
+	start();
+	var counter_interval = setInterval(start, 1000);
+        
+    (function(){
 	//array que armazenará os objetos com src e id de 1 a 8
 	var images = [];
 	
@@ -207,5 +216,6 @@ var contador = 60;
 			//chama a função que reinicia o jogo
 			startGame();
 		},false);
+		clearInterval(counter_interval);
 	}
 }());
