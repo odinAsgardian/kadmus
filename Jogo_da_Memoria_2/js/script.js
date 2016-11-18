@@ -1,4 +1,4 @@
-var contador = 60; 
+var contador = 10; 
 var hiScore = 0 ;  
 
 
@@ -7,9 +7,14 @@ var hiScore = 0 ;
         if ((contador - 1)>= 0) {
             contador = contador - 1;
             circle.innerHTML = contador ;
-        }  else {
+
+        }  else if ((contador -1)<= 0) {
+        	window.alert("Tempo Esgotado");
 
         }
+        	
+
+       
 
         function chamadaHiScore(){
         	if (matches >= 0 ) {
