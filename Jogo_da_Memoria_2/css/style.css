@@ -2,151 +2,98 @@
 	margin: 0;
 	padding: 0;
 }
-*{
-	margin: 0;
-	padding: 0;
-}
-*,*::after,*::before {
-  box-sizing:inherit;
-}
-
-html,body{;box-sizing:border-box;}
-.icon {
-  width:250px;
-  height:250px;
-  border-radius:45px;
-  /*background:white;*/
-  margin:50px auto;
-  padding:25px;
-  position:relative;
-  text-align:center;
-  left: 800px;
-  top: -700px;
-}
-.icon:before {
-  content:"";
-  display:block;
-  width:200px;
-  height:200px;
-  background-image:linear-gradient(to right,#ef4dbc,#bc4bfd,#5c9cfe,#24cffb);
-  border-radius:50%;
-  animation: rot 2s linear infinite; 
-
-}
-.circle {
-  background:white;
-  width:184px;
-  height:184px;
-  border-radius:50%;
-  position:absolute;
-  left:50%;
-  top:50%;
-  margin:-92px -92px;
-  animation: scl 5s linear infinite;
-}
-
-@keyframes rot {
-  0% {transform:rotate(0deg)}
-  100% {transform:rotate(360deg)}
-  
-}
-@keyframes scl {
-  0% {transform:scale(.96)}
-  50% {transform:scale(1)}
-  100% {transform:scale(.96)}
-  
-}
-#circle{
-	/*caracteristicas do cronometro*/
-	font: bold 90px arial;
+body {
 	text-align: center;
-	padding: 40px;
-	color: red ;
-}
-
-body{
-	text-align: center;
+	background-image: url(background.png);
 	background-repeat: no-repeat;
 }
-
-#game{
-	position: relative;
-	width: 1325px;
+#container{
+	width: 825px;
 	height: 495px;
-	border: 1px solid #111;
+	border: 1px solid black;
+	position: relative;
+	margin: 120px auto ;
+	margin-left: 25px;
 	border-radius: 10px;
-	margin: 150px auto;
-	background-color: #563D00;
 }
-
-#hiscore{
-	background-color: blue;
-	font: bold 90px arial;
-	width: 200px;
-	height: 200px;
-}
-
 .card{
 	width: 160px;
 	height: 240px;
-	perspective: 600px;
 	position: absolute;
-	border-radius: 10px;
 }
-
 .face{
-	border-radius: 10px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	border-radius: 10px;
 	transition: all 1s;
 	backface-visibility: hidden;
 }
+.back{
+	background:url("verso.png");
+}
+.back.flipped{
+	transform: rotateY(180deg);
 
+}
 .front{
+	
 	transform: rotateY(-180deg);
 }
-
-.flipped.front{
+.front.flipped{
 	transform: rotateY(0deg);
 }
-
-.back{
-	background: url(../img/novobdc.png);
-}
-
-.flipped.back{
-	transform: rotateY(180deg);
-}
-
-.card:hover, .face.flipped{
-	box-shadow: 0 0 10px #aaa;
-}
-
-.face.flipped.match{
-	box-shadow: 0 0 10px #0f0;
-}
-
-#match{
+#relogio{
 	position: relative;
-	margin: 0 auto;
-	top: 250px;
-	z-index: -1;
-	opacity: 1;
-	transition-property: top, opacity;
-	transition-duration: 1.5s;
+}
+.card:hover{
+	box-shadow: 0 0 10px red ;
+
 }
 
-#gameOver{
+.face.flipped.acertos{
+	box-shadow: 0 0 10px green;
+}
+#jogoacabou{
 	position: absolute;
 	top: 0;
-	border-radius: 5px;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
 	z-index: -2;
 }
-
-#imgGameOver{
-	margin-top: 100px;
+#imgAcerto{
+	position: relative;
+	top: 250px;
+	transition-property: top, opacity;
+	transition-duration: 1.5s;
+	opacity: 1;
+	z-index: -1;
+}
+#time{
+	margin-top: -20px;
+	margin-left: 85%;
+	font: bold 90px arial;
+	border-radius: 50%;
+	padding: 40px;
+	color: black ;
+	position: absolute;
+	left: 100%;
+	background-color: white;
+	height: 200px;
+	width: 200px;
+}
+#score{
+	/*visibility: hidden;*/
+	margin-left: 85%;
+	font: bold 90px arial;
+	border-radius: 50% ;
+	padding: 40px;
+	color: black ;
+	position: absolute;
+	top: 51%;
+	left: 100%;
+	background-color: white;
+	height: 200px;
+	width: 200px;
 }

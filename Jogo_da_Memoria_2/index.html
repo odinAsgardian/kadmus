@@ -1,18 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
-
+<!DOCTYPE html>
+<html>
 <head>
-	
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 1.27" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Memory Game</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title></title>
 </head>
-<body background="img/bandeiras.png " onload="start();">
-	
-	<div id="game">
+<body id="game">
+<div id="container">
 		<div class="card" id="card0">
 			<div class="face back"></div>
 			<div class="face front"></div>
@@ -52,49 +45,20 @@
 		<div class="card" id="card9">
 			<div class="face back"></div>
 			<div class="face front"></div>
-		</div>
-		<div class="card" id="card10">
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
-		<div class="card" id="card11">
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
-		<div class="card" id="card12">
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
-		<div class="card" id="card13">
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
-		<div class="card" id="card14"> 
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
-		<div class="card" id="card15">
-			<div class="face back"></div>
-			<div class="face front"></div>
-		</div>
 		
-		<img id="match" src="img/match.png" />
-		
-		<div id="gameOver">
+			<img src="" id="imgAcerto" />
 
-	</div>
-	</div>
-	<div class="icon">
-  		<div class="circle" id="circle"></div>
-  		<div class="circle2">
-  			
-  		</div>
-  		<div id="hiscore">
-  			
-  		</div>
+		</div>
 
+
+
+		<div id="jogoacabou">
+			
+		</div>
+		<div id="time"></div>
+		<div id="score"></div>
 	
-	
-	<script src="js/script.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery-3.1.1.js"></script>
 </body>
 </html>
