@@ -6,19 +6,19 @@ body {
 	text-align: center;
 	background-image: url(background.png);
 	background-repeat: no-repeat;
-	/*padding-right: 20px;*/
+
 }
 #game{
 	padding: 50px 0 0 50px;
 }
+
 #container{
 	width: 825px;
 	height: 495px;
 	border: 1px solid black;
 	position: relative;
-	/*margin: 120px auto ;*/
-	/*margin-left: 25px;*/
-	border-radius: 10px;
+	border-radius: 05px;
+	background-color:#228B22;
 }
 .card{
 	width: 160px;
@@ -54,7 +54,6 @@ body {
 	box-shadow: 0 0 10px red ;
 
 }
-
 .face.flipped.acertos{
 	box-shadow: 0 0 10px green;
 }
@@ -82,17 +81,13 @@ body {
 	padding: 20px;
 	color: black ;
 	position: absolute;
-	left: 100%;
+	left: 105%;
 	background-color:green;
-	height: 200px;
-	width: 200px;
-	line-height: 200px;
+	height: 150px;
+	width: 150px;
+	line-height: 100px;
+	top: 20%;
 }
-#time h1{
-	font-size: 63px;
-	align-content: center;
-}
-
 #score{
 	visibility: inherit;
 	margin-left: 50px;
@@ -101,11 +96,29 @@ body {
 	padding: 20px;
 	color: black ;
 	position: absolute;
-	top: 51%;
-	left: 100%;
+	top: 70%;
+	left: 105%;
 	background-color:green;
 	border: 1 px solid black;
-	height: 200px;
-	width: 200px;
-	line-height: 200px;
+	height: 150px;
+	width: 150px;
+	line-height: 100px;
+}
+#tempo{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 110%;
+    top: -2%;
+    font-size: 30px;
+    color: #FF8C00;
+}
+#pontuacao{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 111%;
+    top: 55%;
+    font-size: 30px;
+    color: #FF8C00;
 }

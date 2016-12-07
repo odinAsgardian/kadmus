@@ -1,16 +1,11 @@
 (function(){
 	var timer = 60;
 	var timer_id;
-
 	var acertos = 0;
-
 	var imagens = [];
-
 	var cartasViradas=[];
-
 	var jogoacabou = document.querySelector("#jogoacabou");
-
-    var imgAcerto = document.querySelector("#imgAcerto");
+	var imgAcerto = document.querySelector("#imgAcerto");
 
 	for (var i = 0; i < 10; i++) {
 		var img = {
@@ -21,8 +16,7 @@
 	}
 
 	comecaJogo();
-	
-	function comecaJogo(){
+	 function comecaJogo(){
 		acertos = 0 ;
 		tempo();
 		timer = 60;
@@ -36,14 +30,11 @@
 		var cronometro =document.getElementById("tempo");
 		var pontuacao = document.getElementById("pontuacao");
 		hiscore.innerHTML="";
-		// cronometro.innerHTML="tempo";
-		// pontuacao.innerHTML="pontuacao";
-
+		
 		for (var i = 0; i < 10; i++) {
 			var card = document.querySelector("#card" + i);
 			faceFrente[i].classList.remove("flipped","acertos");
 			backFrente[i].classList.remove("flipped","acertos");
-
 
 			card.style.left = (i === 0 || i ===5) ? 5 + "px" : i % 5 * 165 + 5 +"px";
 			card.style.top = i < 5 ? 5 + "px" : 250 + "px";
@@ -73,9 +64,9 @@
 			document.getElementById("time").innerHTML=timer;
 			console.log(timer);
 	},1000);
-	}
+}
 	function embaralhar(arrayVelho){
-		// Math.floor(Math.random()*11);
+		
 		var novoArray = [];
 		while(novoArray.length !== arrayVelho.length){
 			var i = Math.floor(Math.random()*arrayVelho.length);
@@ -87,7 +78,7 @@
 	}
 	function giraCarta(){
 		if (cartasViradas.length < 2) {
-		var faces = this.getElementsByClassName("face");
+		  var faces = this.getElementsByClassName("face");
 		
 		if (faces[0].classList.length > 2) {
 			return;
@@ -106,9 +97,7 @@
 				cartasViradas[1].childNodes[3].classList.toggle("acertos");
 
 				sinalCartaCerta();
-
 				acertos++;
-
 				cartasViradas = [];
 
 				if (acertos === 5) {
@@ -125,14 +114,13 @@
 		cartasViradas = [];
 	}	
 
-	}
+}
 	
 	function jogoAcabou(){
 		
 		jogoacabou.style.zIndex = 10;
 		document.getElementById("score").innerHTML=timer + acertos * 2;
 		jogoacabou.addEventListener("click",comecaJogo);
-		
 
 	}
 
@@ -156,16 +144,10 @@
 				
 				clearInterval(timer_id);
 				
-				
-				
-
-
 			}
 			
-			
 		}
-
-	
- }
+     
+     }
 
 }());
