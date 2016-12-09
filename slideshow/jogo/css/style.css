@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+	background-image: url(background.png);
+	background-repeat: no-repeat;
+	/*padding-right: 20px;*/
+}
+#game{
+	padding: 50px 0 0 50px;
+}
+#container{
+	width: 825px;
+	height: 495px;
+	border: 1px solid black;
+	position: relative;
+	/*margin: 120px auto ;*/
+	/*margin-left: 25px;*/
+	border-radius: 10px;
+}
+.card{
+	width: 160px;
+	height: 240px;
+	position: absolute;
+}
+.face{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 10px;
+	transition: all 1s;
+	backface-visibility: hidden;
+}
+.back{
+	background:url("../img/novobdc1.png");
+}
+.back.flipped{
+	transform: rotateY(180deg);
+
+}
+.front{
+	
+	transform: rotateY(-180deg);
+}
+.front.flipped{
+	transform: rotateY(0deg);
+}
+#relogio{
+	position: relative;
+}
+.card:hover{
+	box-shadow: 0 0 10px red ;
+
+}
+
+.face.flipped.acertos{
+	box-shadow: 0 0 10px green;
+}
+#jogoacabou{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: -2;
+}
+#imgAcerto{
+	position: relative;
+	top: 250px;
+	transition-property: top, opacity;
+	transition-duration: 1.5s;
+	opacity: 1;
+	z-index: -1;
+}
+#time{
+	margin-top: -20px;
+	margin-left: 50px;
+	font: bold 52px arial;
+	border-radius: 50%;
+	padding: 20px;
+	color: black ;
+	position: absolute;
+	left: 100%;
+	background-color:green;
+	height: 200px;
+	width: 200px;
+	line-height: 200px;
+}
+#time h1{
+	font-size: 63px;
+	align-content: center;
+}
+
+#score{
+	visibility: inherit;
+	margin-left: 50px;
+	font: bold 52px arial;
+	border-radius: 50% ;
+	padding: 20px;
+	color: black ;
+	position: absolute;
+	top: 51%;
+	left: 100%;
+	background-color:green;
+	border: 1 px solid black;
+	height: 200px;
+	width: 200px;
+	line-height: 200px;
+}

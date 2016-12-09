@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>CELLE'S GAME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<style type="text/css">
+	.wrapper{
+		max-width:95%;
+		height: 500px;
+		overflow: hidden;
+	}
+	.game .play{
+	background-color: rgba(0,0,0,0.9);
+	text-decoration: none;
+	float: right;
+	cursor: pointer;
+  	position: absolute;
+  	top: 30%;
+  	width: auto;
+  	marksrgin-top: -22px;
+  	padding: 16px;
+  	color: white;
+  	font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+  	border-radius: 0 3px 3px 0;
+	}
+	.game .sound{
+		background-color: rgba(0,0,0,0.9);
+		text-decoration: none;
+		cursor: pointer;
+		position: absolute;
+		top: 43%;
+		width: auto;
+		margin-top: 22px;
+		padding:16px;
+		color: green;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+	}
+	.game .sign{
+		background-color: rgba(0,0,0,0.9); 
+		text-decoration: none;
+		cursor: pointer;
+		position: absolute;
+		top: 55%;
+		width: auto;
+		margin-top: 42px;
+		padding:16px;
+		color: blue;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+	}
+	.play:hover, .sound:hover, .sign:hover {
+  		background-color: rgba(0,0,0,0.8);
+	}
+	.gradient{
+	 background-image: linear-gradient(to bottom, #0999c5, #ffffff);
+	}
+	.gradient-2{
+	 background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+	}
+</style>
+<body class="gradient-2">
+
+<!-- <h2 class="w3-center">Automatic Slideshow</h2> -->
+<div class="gradient" align="center">
+	<img src="imagem/logo1.png" alt="logo do ifpe.">
+</div>	
+<div class="w3-content w3-section wrapper" >
+  <img class="mySlides" src="imagem/Australia1.jpg" style="width:100%">
+  <img class="mySlides" src="imagem/canada21.jpg" style="width:100%">
+  <img class="mySlides" src="imagem/texas1.jpg" style="width:100%">
+  <img class="mySlides" src="imagem/londres.jpg" style="width:100%">
+  	<div class="game">
+  		<a href="jogo/index.html" class="play">play</a><br>
+  		<a href="#" class="sound" onclick="alert('função não pronta')">Sound</a><br>
+  		<a href="#" class="sign">sign up</a>
+  	</div>
+</div>
+
+
+</body>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 1000); // Change image every 2 seconds
+}
+</script>
+</html>
